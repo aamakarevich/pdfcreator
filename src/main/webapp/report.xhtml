@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Report Creator</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+</h:head>
+<h:body>
+    <div class="container">
+        <h3>PDF Report Creator</h3>
+        <h:form styleClass="form-horizontal">
+            <div class="form-group">
+                <div class="col-lg-3">
+                    <h:selectOneMenu id="plansmenu" value="#{planReportBean.plan}" styleClass="form-control">
+                        <f:selectItems value="#{planReportBean.plans}"/>
+                    </h:selectOneMenu>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-3">
+                    <h:commandButton value="Download" action="#{planReportBean.generateReport()}" styleClass="form-control btn-primary"/>
+                </div>
+            </div>
+        </h:form>
+    </div>
+</h:body>
+</html>
